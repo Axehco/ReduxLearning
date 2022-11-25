@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
-import Count from './components/Count'
+// 引入的是容器组件了，它是父组件。
+import Count from './containers/Count'
+import store from './redux/store';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Count />
+        {/* 容器中的store需要App组件传入才能使用 */}
+        {/* 给容器组件传递store */}
+        <Count store={store}/>
       </div>
     );
   }
